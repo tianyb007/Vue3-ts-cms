@@ -1,11 +1,12 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import 'normalize.css'
+import './assets/CSS/index.less'
 import App from './App.vue'
-
-import './assets/main.css'
+import router from './router'
+import pinia from './store'
 
 const app = createApp(App)
-
-app.use(createPinia())
+app.use(router)
+app.use(pinia)
 
 app.mount('#app')

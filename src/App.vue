@@ -22,6 +22,6 @@
 .app {
   height: 100vh;
   width: 100vw;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 </style>

@@ -1,6 +1,9 @@
 <template>
   <div class="login">
     <login-panel />
+    <el-icon :size="50" color="red">
+      <Edit />
+    </el-icon>
   </div>
 </template>
 

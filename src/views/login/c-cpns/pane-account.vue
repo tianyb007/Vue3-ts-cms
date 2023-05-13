@@ -1,6 +1,6 @@
 <template>
   <div class="pane-account">
-    <el-form label-width="60px" size="large" :model="account" :rules="accountRules">
+    <el-form label-width="60px" size="large" :model="account" :rules="accountRules" status-icon>
       <el-form-item label="账号" prop="name">
         <el-input v-model="account.name" />
       </el-form-item>
@@ -14,13 +14,13 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 import type { FormRules } from 'element-plus'
-// 定义account数据
+// 1、定义account数据
 const account = reactive({
   name: '',
   password: ''
 })
 
-// 定义校验规则
+// 2、定义校验规则
 const accountRules: FormRules = {
   name: [
     { required: true, message: 'Please input Activity name', trigger: 'blur' },
@@ -31,6 +31,12 @@ const accountRules: FormRules = {
     { pattern: /^[a-z0-9]{3,}$/, message: '最低3位以上数字和字母组成', trigger: 'blur' }
   ]
 }
+
+// 3、定义登录规则
+function loginAction() {
+  console.log('function excution')
+}
+defineExpose({ loginAction })
 </script>
 
 <style lang="less" scoped>

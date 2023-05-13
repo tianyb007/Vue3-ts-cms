@@ -44,12 +44,17 @@
 import { ref } from 'vue'
 import PaneAccount from './pane-account.vue'
 import PanePhone from './pane-phone.vue'
+import PaneAccount from './pane-account.vue'
 const activeName = ref('account')
 const isRemPwd = ref(false)
+const accountRef = ref<InstanceType<typeof PaneAccount>>()
 
 function handleLoginBtnClick() {
   if (activeName.value === 'account') {
     console.log('用户在进行账号登录')
+    // 1、获取子组件的实例
+    accountRef.value?.loginAction
+    // 2、调用方法
   } else {
     console.log('用户在进行手机登录')
   }
@@ -79,7 +84,6 @@ function handleLoginBtnClick() {
   .controls {
     margin-top: 12px;
     display: flex;
-
     justify-content: space-between;
   }
 
